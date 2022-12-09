@@ -8,10 +8,18 @@ class Mycomponent extends React.Component {
     // điểm hạn chế JSX chỉ return về được một element duy nhất 
     // muốn code js để tạo ra nội dung reder động thì code trong dấu {.. your code..}
 
+    state = {
+        name:  'lam',
+        address: 'ha noi',
+        age: 29
+    };
+
     render() { // tập hợp các khối html và render ra giao diện
+
+
         return (
             <div>
-                my first component
+                my name is {this.state.name} and my address is {this.state.address}
             </div>
         );
 
