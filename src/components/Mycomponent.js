@@ -14,12 +14,24 @@ class Mycomponent extends React.Component {
         age: 29
     };
 
+    handleClick(event) {
+        // console.log('click me by button');
+        // console.log(event);
+        console.log(this.state.name);
+    }
+
+    handleOnMouseOver(event) {
+        console.log(event);
+    }
+
     render() { // tập hợp các khối html và render ra giao diện
 
 
         return (
             <div>
                 my name is {this.state.name} and my address is {this.state.address}
+                <button onMouseOver={this.handleClick}>Hover me</button>    
+                <button onClick={this.handleClick}>Click me</button>    
             </div>
         );
 
