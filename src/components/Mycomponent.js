@@ -6,7 +6,13 @@ import UsersInfo from "./UsersInfo";
 
 class Mycomponent extends React.Component {
 
-    
+    state = {
+        listUsers: [
+            {id: 1, name: 'Vu Anh Lam', age: "18"},
+            {id: 2, name: 'Vu Anh quan', age: "36"},
+            {id: 3, name: 'Vu Anh anh', age: "40"},
+        ]
+    }
 
     render() { // tập hợp các khối html và render ra giao diện
 
@@ -15,11 +21,13 @@ class Mycomponent extends React.Component {
             age: 20,
             address: 'ha noi'
         }
+
+        const array = ['a', 'b', 'c']
         return (
             <div>
                 <UsersInfo/>
                 <br></br>
-                <DisplayInfo name="Thien tai" age="50" info={myInfo}></DisplayInfo>
+                <DisplayInfo listUsers={this.state.listUsers}></DisplayInfo>
             </div>
         );
 
