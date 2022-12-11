@@ -36,15 +36,20 @@ class Mycomponent extends React.Component {
 
         const array = ['a', 'b', 'c']
         return (
-            <div>
-                <AddUserInfo
-                    handleAddNewUser = {this.handleAddNewUser}
-                />
+            <>
+                <div className="a">
+                    <AddUserInfo
+                        handleAddNewUser = {this.handleAddNewUser}
+                    />
+                </div>
                 <br></br>
-                <DisplayInfo 
-                    listUsers = {this.state.listUsers}
-                />
-            </div>
+
+                <div className="b">
+                    <DisplayInfo 
+                        listUsers = {this.state.listUsers}
+                    />
+                </div>
+            </>
         );
 
     }
