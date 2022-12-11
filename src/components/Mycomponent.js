@@ -15,7 +15,7 @@ class Mycomponent extends React.Component {
     }
 
     handleAddNewUser = (user) => {
-        // let listUsersNew = [...this.state.listUsers]
+        // let listUsersNew = [...this.state.listUsers]         //===> thao tác trực tiếp lên state sẽ gặp bug trong tương lai
         // listUsersNew.unshift(user)
         // this.setState({
         //     listUsers: listUsersNew          //======> bad code
