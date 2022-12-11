@@ -2,7 +2,7 @@ import React from "react";
 import Mycomponent from "./Mycomponent";
 
 
-class UsersInfo extends React.Component {
+class AddUserInfo extends React.Component {
 
     // JSX cho phép viết code javaScript trong code của html
     // điểm hạn chế JSX chỉ return về được một element duy nhất 
@@ -48,7 +48,11 @@ class UsersInfo extends React.Component {
 
     handleOnsubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
+        this.props.handleAddNewUser({
+            id: Math.floor(Math.floor(Math.random() * 10) + 1) + '-random',
+            name: this.state.name,
+            age: this.state.age
+        });
     }
     
     render() {
@@ -78,4 +82,4 @@ class UsersInfo extends React.Component {
     }
 }
 
-export default UsersInfo
+export default AddUserInfo

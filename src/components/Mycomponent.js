@@ -2,7 +2,7 @@
 
 import React from "react";
 import DisplayInfo from "./DisplayInfo";
-import UsersInfo from "./UsersInfo";
+import AddUserInfo from "./AddUserInfo";
 
 class Mycomponent extends React.Component {
 
@@ -12,6 +12,18 @@ class Mycomponent extends React.Component {
             {id: 2, name: 'Vu Anh quan', age: "36"},
             {id: 3, name: 'Vu Anh anh', age: "16"},
         ]
+    }
+
+    handleAddNewUser = (user) => {
+        // let listUsersNew = [...this.state.listUsers]
+        // listUsersNew.unshift(user)
+        // this.setState({
+        //     listUsers: listUsersNew          //======> bad code
+        // })
+
+        this.setState({ // cách code 1
+            listUsers: [user, ...this.state.listUsers]
+        })
     }
 
     render() { // tập hợp các khối html và render ra giao diện
@@ -25,9 +37,13 @@ class Mycomponent extends React.Component {
         const array = ['a', 'b', 'c']
         return (
             <div>
-                <UsersInfo/>
+                <AddUserInfo
+                    handleAddNewUser = {this.handleAddNewUser}
+                />
                 <br></br>
-                <DisplayInfo listUsers={this.state.listUsers}></DisplayInfo>
+                <DisplayInfo 
+                    listUsers = {this.state.listUsers}
+                />
             </div>
         );
 
